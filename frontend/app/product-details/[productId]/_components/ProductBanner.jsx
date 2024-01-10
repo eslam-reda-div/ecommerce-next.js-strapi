@@ -5,7 +5,7 @@ function ProductBanner({ product }) {
 		<div>
 			{product?.attributes?.banner?.data?.attributes?.url ?
 				<Image
-					src={'http://localhost:1337' + product?.attributes?.banner?.data?.attributes?.url}
+					src={'https://ecommerce-next-js-strapi.onrender.com' + product?.attributes?.banner?.data?.attributes?.url}
 					alt='product-details-banner'
 					width={400}
 					height={400}

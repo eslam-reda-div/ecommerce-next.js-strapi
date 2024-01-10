@@ -12,7 +12,7 @@ export async function POST(req) {
   try {
     console.log(body.files[0].product.attributes.files.data.attributes.url);
     var newmessage = body.files.map((file) => {
-      var url = "http://localhost:1337" + file.product.attributes.files.data.attributes.url;
+      var url = "https://ecommerce-next-js-strapi.onrender.com" + file.product.attributes.files.data.attributes.url;
       return url;
     });
     console.log(newmessage);

@@ -36,7 +36,7 @@ function Cart() {
 							{cart?.map((item) => (
 								<li className="flex items-center gap-4">
 									<img
-										src={'http://localhost:1337' + item?.product?.attributes?.banner?.data?.attributes?.url}
+										src={'https://ecommerce-next-js-strapi.onrender.com' + item?.product?.attributes?.banner?.data?.attributes?.url}
 										alt=""
 										className="object-cover w-16 h-16 rounded"
 									/>
