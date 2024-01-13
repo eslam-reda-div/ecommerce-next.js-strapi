@@ -15,11 +15,12 @@ import * as React from 'react';
 
 export const EmailTemplate = ({
 	body,
+	newmessage,
 }) => (
 	<Html>
 		<Head />
 		<Preview>
-			The Ecommerce Platform For Yout Digital Products search now for your future
+			The Ecommerce Platform For Your Digital Products search now for your future
 		</Preview>
 		<Body style={main}>
 			<Container style={container}>
@@ -28,18 +29,19 @@ export const EmailTemplate = ({
 					Thank you purchasing on Eslam Tech Ecommerce. Click on Below download button to download the all digital content
 				</Text>
 				<Section style={btnContainer}>
-					{body.files.map((item, index) => (
+					{newmessage.map((item, index) => (
 						<Button pX={12} pY={12}
 							style={{
 								padding: 5,
 								paddingLeft: 10,
 								paddingRight: 10,
 							}}
-							href={'http://localhost:1337' + item?.product.attributes.files.data.attributes.url}
+							href={item}
 							key={index}>
-							Download {item?.product?.attributes?.name}
+							Download Link {index + 1}
 						</Button>
 					))}
+
 				</Section>
 				<Text style={paragraph}>
 					Best,
@@ -47,7 +49,7 @@ export const EmailTemplate = ({
 					The Eslam Tech team
 				</Text>
 				<Hr style={hr} />
-				<Text style={footer}>Subscribe to Ali Eslam</Text>
+				<Text style={footer}>Subscribe to Eslam tech</Text>
 			</Container>
 		</Body>
 	</Html>

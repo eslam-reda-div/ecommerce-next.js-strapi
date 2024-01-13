@@ -19,35 +19,35 @@ export async function POST(req) {
   
     console.log(body.email)
 
-    emailjs
-      .send(
-        'service_6gc9phi',
-        'template_7jf3rm7',
-        {
-          from_name: "Eslam Tech",
-          to_name: 'customer',
-          from_email: "eslamreda542@gmail.com",
-          to_email: body.email,
-          message: newmessage.join("  /  ") ,
-        },
-        'J12u5IVLAxR-RS8IO'
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        }
-      );
+    // emailjs
+    //   .send(
+    //     'service_6gc9phi',
+    //     'template_7jf3rm7',
+    //     {
+    //       from_name: "Eslam Tech",
+    //       to_name: 'customer',
+    //       from_email: "eslamreda542@gmail.com",
+    //       to_email: body.email,
+    //       message: newmessage.join("  /  ") ,
+    //     },
+    //     'J12u5IVLAxR-RS8IO'
+    //   )
+    //   .then(
+    //     () => {
+    //       console.log("SUCCESS!");
+    //     }
+    //   );
 
-    // const data = await resend.emails.send({
-    //   from: "onboarding@resend.dev",
-    //   to: [body.email],
-    //   subject: "Orders From Eslam Tech",
-    //   react: EmailTemplate({ body }),
-    // });
+    const data = await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: [body.email],
+      subject: "Orders From Eslam Tech",
+      react: EmailTemplate({ body , newmessage }),
+    });
 
-    // console.log(data);
+    console.log(data);
 
-    return Response.json({ data: [] });
+    return Response.json({ data });
   } catch (error) {
     return Response.json({ error });
   }
